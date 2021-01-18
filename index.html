@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Guess the image</title>
+</head>
+<body>
+    <h2 class="guess">Guess the image and have fun!</h2>
+
+        <div class="container">
+            <h1 id="rock">4 more guesses. You rock!!</h1>
+            <div class="result">
+            <span class="score">Score: </span> <span id="score_track" style="text-decoration: none;"></span>
+            <span id="congrats" style="text-decoration: none;"></span>
+        </div>
+        <div class="reload"><button onClick="window.location.reload();" class="myButton">Play again</button></div>
+    
+    </div>
+
+    <h3 class="reveal_title">Images to Reveal:</h3>
+    <div class="reveal">
+        <img src="imgs/bucket.png" alt="bucket">
+        <img src="imgs/deer.png" alt="bucket">
+        <img src="imgs/dog.png" alt="bucket">
+        <img src="imgs/money.png" alt="bucket">
+        <img src="imgs/penguin.png" alt="bucket">
+        <img src="imgs/thor.png" alt="bucket">
+        <img src="imgs/tiger.png" alt="bucket">
+        <img src="imgs/toy.png" alt="bucket">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

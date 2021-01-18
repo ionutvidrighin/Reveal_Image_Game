@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Balsamiq Sans', cursive;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*background-image: linear-gradient(to right top, #d4d2ff, #b1acfd, #8d85f8, #685ff1, #3836e8);*/
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+h2 {
+    position: absolute;
+    top: 2.5%;
+    font-size: 3rem;
+    color:rgba(40, 96, 252, 0.5);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 60vh;
+    width: 40%;
+    gap: 1px;
+}
+
+
+.container img {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100px;
+    height: 100px;
+    margin: 15px 15px 15px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+} 
+
+
+.container h1 {
+    position: absolute;
+    bottom: 50%;
+    right: 40%;
+    opacity: 0;
+}
+
+.white {
+    background: white !important;
+}
+
+.result {
+    width: 17%;
+    height: 11%;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2)
+      );
+    position: absolute;
+    border-radius: 10px;
+    left: 5%;
+    bottom: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.score {
+    position: absolute;
+    right: 50%
+}
+
+#congrats {
+    color: black;
+    text-decoration: none !important;
+    position: absolute;
+    right: 5%
+}
+
+#score_track {
+    position: absolute;
+    right: 25%;
+    color: black;
+}
+
+.reload {
+    position: absolute;
+    left: 10%;
+    bottom: 38%
+}
+
+
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#f86e38;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    outline: none;
+}
+
+.myButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.reveal_title {
+    position: absolute;
+    top: 25%;
+    right: 15%;
+}
+
+.reveal {
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.reveal img {
+    width: 70px;
+    height: 70px;
+    margin: 5px 5px 5px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.congrats0 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: rgba(229, 243, 34, 0.952);
+}
+
+.congrats1 {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: rgb(144, 241, 33);
+}
+
+.congrats2 {
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: rgb(241, 41, 208);
+}
+
+.congrats3 {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: rgb(197, 29, 37);
+}
+
+.congrats4 {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: rgb(19, 129, 5);
+}
+
