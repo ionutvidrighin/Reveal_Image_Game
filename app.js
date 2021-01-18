@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'imgs/toy.png'
         }
     ];
+
     //gsap.fromTo('.guess', {opacity: 0, scale: 0}, {scale: 3, opacity: 1, repeat: 1, yoyo: true, yoyoEase: true, duration: 2});
     TweenMax.staggerTo(".guess", 1, {
         cycle: {
@@ -121,7 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
             allImgs[option2].setAttribute('src', 'imgs/white.png');
             //console.log(selectedSquareId);
         } else if (selectedSquare[0] === selectedSquare[1]){
-            alert('You guessed it!')
+            swal({
+                title: "Great!",
+                text: "You guessed it!",
+                icon: "imgs/smile.png"
+              });
             allImgs[option1].setAttribute('src', 'imgs/discovered.png');
             allImgs[option2].setAttribute('src', 'imgs/discovered.png');
             allImgs[option1].removeEventListener('click', flipSquare);
@@ -130,7 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             allImgs[option1].setAttribute('src', 'imgs/white.png');
             allImgs[option2].setAttribute('src', 'imgs/white.png');
-            alert('Try again!')
+            swal({
+                title: "Ohhh..",
+                text: "You just missed it",
+                icon: "imgs/sad.png",
+              });
+
         }
         selectedSquare = [];
         selectedSquareId = [];
@@ -140,8 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const youRock = document.querySelector('#rock');
         if (win.length === 4) {
-            gsap.fromTo('#rock', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: 1, yoyo: true, yoyoEase: true, duration: 2});
-            youRock.removeAttribute('id');
+            setTimeout( () => {
+                gsap.fromTo('#rock', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: 1, yoyo: true, yoyoEase: true, duration: 2});
+                youRock.removeAttribute('id');
+            }, 450)
         }
 
         const congrats = ['Congrats!!', 'Congrats!!', 'You Won!!!', 'Congrats!!', 'Congrats!!'];
@@ -155,18 +167,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const revealImgs = document.querySelector('.reveal');
             revealTitle.style.opacity = "0";
             revealImgs.style.opacity = "0";
+
+            setTimeout ( () => {
+                for (let i = 0; i < congrats.length; i++) {
+                    let newText = document.createElement('h1');
+                    newText.textContent = congrats[i];
+                    newText.setAttribute('class', 'congrats' + i);
+                    bodyDOM.appendChild(newText);
+                    gsap.fromTo('.congrats0', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
+                    gsap.fromTo('.congrats1', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
+                    gsap.fromTo('.congrats2', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
+                    gsap.fromTo('.congrats3', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
+                    gsap.fromTo('.congrats4', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
+                } 
+            }, 600)
             
-            for (let i = 0; i < congrats.length; i++) {
-                let newText = document.createElement('h1');
-                newText.textContent = congrats[i];
-                newText.setAttribute('class', 'congrats' + i);
-                bodyDOM.appendChild(newText);
-                gsap.fromTo('.congrats0', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
-                gsap.fromTo('.congrats1', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
-                gsap.fromTo('.congrats2', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
-                gsap.fromTo('.congrats3', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
-                gsap.fromTo('.congrats4', {opacity: 0, scale: 0}, {scale: 2, opacity: 1, repeat: -1, yoyo: true, yoyoEase: true, duration: 2});
-            }
         }
     }
   
